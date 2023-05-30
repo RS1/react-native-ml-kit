@@ -3,10 +3,10 @@
 @import MLKitVision.MLKVisionImage;
 @import MLKitTextRecognition;
 @import MLKitTextRecognitionCommon;
-@import MLKitTextRecognitionChinese;
-@import MLKitTextRecognitionJapanese;
-@import MLKitTextRecognitionKorean;
-@import MLKitTextRecognitionDevanagari;
+// @import MLKitTextRecognitionChinese;
+// @import MLKitTextRecognitionJapanese;
+// @import MLKitTextRecognitionKorean;
+// @import MLKitTextRecognitionDevanagari;
 
 @implementation TextRecognition
 
@@ -94,14 +94,14 @@ RCT_EXPORT_METHOD(recognize: (nonnull NSString*)url
     // if the language param isn't specified, we can assume the user requirement is Latin text recognition
     if (script == nil || [script isEqualToString:@"Latin"]) {
         options = [[MLKTextRecognizerOptions alloc] init];
-    } else if ([script isEqualToString:@"Chinese"]) {
-        options = [[MLKChineseTextRecognizerOptions alloc] init];
-    } else if ([script isEqualToString:@"Devanagari"]) {
-        options = [[MLKDevanagariTextRecognizerOptions alloc] init];
-    } else if ([script isEqualToString:@"Japanese"]) {
-        options = [[MLKJapaneseTextRecognizerOptions alloc] init];
-    } else if ([script isEqualToString:@"Korean"]) {
-        options = [[MLKKoreanTextRecognizerOptions alloc] init];
+    // } else if ([script isEqualToString:@"Chinese"]) {
+    //     options = [[MLKChineseTextRecognizerOptions alloc] init];
+    // } else if ([script isEqualToString:@"Devanagari"]) {
+    //     options = [[MLKDevanagariTextRecognizerOptions alloc] init];
+    // } else if ([script isEqualToString:@"Japanese"]) {
+    //     options = [[MLKJapaneseTextRecognizerOptions alloc] init];
+    // } else if ([script isEqualToString:@"Korean"]) {
+    //     options = [[MLKKoreanTextRecognizerOptions alloc] init];
     } else {
         return reject(@"Text Recognition", @"Unsupported script", nil);
     }
